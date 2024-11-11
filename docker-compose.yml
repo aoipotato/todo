@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: my_postgres_db
+    environment:
+      POSTGRES_USER: aoi
+      POSTGRES_PASSWORD: todo
+      POSTGRES_DB: mytodo
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # データの永続化
+
+volumes:
+  postgres_data:  # データの永続化のためのボリューム
+
